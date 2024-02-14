@@ -38,11 +38,9 @@ export default function GallerySlider(props: Props) {
   return (
     <div id={id} class="grid grid-flow-row sm:grid-flow-col">
       {/* Image Slider */}
-      <div class="relative order-1 sm:order-2">
-        <Slider class="carousel carousel-center gap-6 w-screen sm:w-[40vw]">
+      <div class="relative order-1 sm:order-2 lg:grid lg:grid-cols-2 flex overflow-auto">
           {images.map((img, index) => (
-            <Slider.Item
-              index={index}
+            <div
               class="carousel-item w-full"
             >
               <Image
@@ -57,23 +55,8 @@ export default function GallerySlider(props: Props) {
                 preload={index === 0}
                 loading={index === 0 ? "eager" : "lazy"}
               />
-            </Slider.Item>
+            </div>
           ))}
-        </Slider>
-
-        <Slider.PrevButton
-          class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
-          disabled
-        >
-          <Icon size={24} id="ChevronLeft" strokeWidth={3} />
-        </Slider.PrevButton>
-
-        <Slider.NextButton
-          class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
-          disabled={images.length < 2}
-        >
-          <Icon size={24} id="ChevronRight" strokeWidth={3} />
-        </Slider.NextButton>
 
         <div class="absolute top-2 right-2 bg-base-100 rounded-full">
           <ProductImageZoom
@@ -85,7 +68,7 @@ export default function GallerySlider(props: Props) {
       </div>
 
       {/* Dots */}
-      <ul class="carousel carousel-center gap-1 px-4 sm:px-0 sm:flex-col order-2 sm:order-1">
+      {/* <ul class="carousel carousel-center gap-1 px-4 sm:px-0 sm:flex-col order-2 sm:order-1">
         {images.map((img, index) => (
           <li class="carousel-item min-w-[63px] sm:min-w-[100px]">
             <Slider.Dot index={index}>
@@ -100,7 +83,7 @@ export default function GallerySlider(props: Props) {
             </Slider.Dot>
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       <SliderJS rootId={id} />
     </div>
