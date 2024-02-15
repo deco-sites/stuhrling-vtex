@@ -5,8 +5,11 @@ import Image from "apps/website/components/Image.tsx";
 import CartButtonVTEX from "$store/islands/Header/Cart/vtex.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { SearchButton } from "$store/islands/Header/Buttons.tsx";
+import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
+import Searchbar from "$store/islands/Header/Searchbar.tsx";
 
 interface Props {
+  searchbar?: SearchbarProps;
   topText?: string;
   headerImage?: ImageWidget;
   headerItems?: {
@@ -16,7 +19,7 @@ interface Props {
 }
 
 export default function MainHeader(props: Props) {
-  const { topText, headerImage, headerItems } = props;
+  const { topText, headerImage, headerItems, searchbar } = props;
   const [menu, setMenu] = useState<boolean>(false);
 
   return (
@@ -42,8 +45,9 @@ export default function MainHeader(props: Props) {
               })
               : null}
           </div>
-          <div className={`flex`}>
+          <div className={`flex gap-[20px]`}>
             <SearchButton />
+            <Searchbar searchbar={searchbar} />
             <a
               class="flex items-center text-xs font-thin"
               href="/account"

@@ -245,7 +245,7 @@ export default function MainFooter(props: Props) {
               >
                 segurança
               </p>
-              <div className={`flex`}>
+              <div className={`flex items-center`}>
                 {security.map((item) => {
                   return <Image src={item.image} />;
                 })}
@@ -259,7 +259,7 @@ export default function MainFooter(props: Props) {
               >
                 tecnologia
               </p>
-              <div className={`flex gap-2`}>
+              <div className={`flex gap-2 items-center`}>
                 {tecnologies
                   ? tecnologies.map((item) => {
                     return <Image src={item.image} />;
