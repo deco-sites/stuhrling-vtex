@@ -115,7 +115,7 @@ function ProductCard({
       id={id}
       class={`card card-compact group w-full ${
         align === "center" ? "text-center" : "text-start"
-      } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
+      } ${l?.onMouseOver?.showCardShadow ? "" : ""}
         ${
         l?.onMouseOver?.card === "Move up" &&
         "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
@@ -165,6 +165,7 @@ function ProductCard({
               <WishlistButtonVtex
                 productGroupID={productGroupID}
                 productID={productID}
+                
               />
             )}
             {platform === "wake" && (
@@ -273,7 +274,7 @@ function ProductCard({
                 )
                 : (
                   <h2
-                    class="truncate text-base lg:text-lg text-base-content uppercase font-normal"
+                    class="font-['lato'] text-base text-center min-h-[72px]"
                     dangerouslySetInnerHTML={{ __html: name ?? "" }}
                   />
                 )}
@@ -303,13 +304,13 @@ function ProductCard({
                 } ${align === "center" ? "justify-center" : "justify-end"}`}
               >
                 <div
-                  class={`line-through text-base-300 text-xs font-light ${
+                  class={`font-['lato'] text-sm text-center text-[#777] line-through ${
                     l?.basics?.oldPriceSize === "Normal" ? "lg:text-sm" : ""
                   }`}
                 >
                   {formatPrice(listPrice, offers?.priceCurrency)}
                 </div>
-                <div class="text-base-content lg:text-sm font-light">
+                <div class="font-['lato'] text-base text-center text-black ">
                   {formatPrice(price, offers?.priceCurrency)}
                 </div>
               </div>
