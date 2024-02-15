@@ -225,7 +225,9 @@ export default function MainFooter(props: Props) {
             </div>
           </div>
         </div>
-        <div className={`border-t border-[#444] pt-8  mt-8 flex justify-between`}>
+        <div
+          className={`border-t border-[#444] pt-8  mt-8 flex justify-between`}
+        >
           <div className={`w-1/2 gap-8 flex`}>
             <div>
               <p

@@ -57,7 +57,7 @@ function ProductShelf({
     5: "w-1/5",
   };
   return (
-    <div class="w-full container py-8 flex flex-col gap-6 lg:py-10">
+    <div class="w-full max-w-[1416px] m-auto container py-8 flex flex-col gap-6 lg:py-10">
       <Header
         title={title || ""}
         description={description || ""}
@@ -75,7 +75,7 @@ function ProductShelf({
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
-              class={`carousel-item ${
+              class={`carousel-item border border-[#ddd] ${
                 slideDesktop[layout?.numberOfSliders?.desktop ?? 3]
               } ${slideMobile[layout?.numberOfSliders?.mobile ?? 1]}`}
             >
