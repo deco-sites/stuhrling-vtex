@@ -225,7 +225,7 @@ export default function MainFooter(props: Props) {
             </div>
           </div>
         </div>
-        <div className={`border-t border-[#444] pt-8  mt-8 flex `}>
+        <div className={`border-t border-[#444] pt-8  mt-8 flex justify-between`}>
           <div className={`w-1/2 gap-8 flex`}>
             <div>
               <p
@@ -252,7 +252,7 @@ export default function MainFooter(props: Props) {
               </div>
             </div>
           </div>
-          <div className={`flex w-full justify-end`}>
+          <div className={`flex justify-end`}>
             <div className={`flex flex-col`}>
               <p
                 className={`font-['lato'] text-[10px] text-[#aaa] uppercase mb-6`}
