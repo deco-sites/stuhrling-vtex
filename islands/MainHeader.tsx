@@ -2,6 +2,9 @@
 import { useEffect, useRef, useState } from "preact/compat";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import CartButtonVTEX from "$store/islands/Header/Cart/vtex.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
+import { SearchButton } from "$store/islands/Header/Buttons.tsx";
 
 interface Props {
   topText?: string;
@@ -39,7 +42,19 @@ export default function MainHeader(props: Props) {
               })
               : null}
           </div>
-          <div></div>
+          <div className={`flex`}>
+            <SearchButton />
+            <a
+              class="flex items-center text-xs font-thin"
+              href="/account"
+              aria-label="Account"
+            >
+              <div class="flex btn btn-circle btn-sm btn-ghost gap-1">
+                <Icon id="PersonMyAcoount" size={20} strokeWidth={0.4} />
+              </div>
+            </a>
+            <CartButtonVTEX />
+          </div>
         </div>
       </div>
       {/*Mobile*/}
@@ -62,7 +77,7 @@ export default function MainHeader(props: Props) {
           </div>
           <Image src={headerImage ? headerImage : ""}></Image>
           <div>
-            {/*Colocar minicart aqui*/}
+            <CartButtonVTEX />
           </div>
         </div>
       </div>

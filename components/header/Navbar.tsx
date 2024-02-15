@@ -141,4 +141,6 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
   );
 }
 
+//só pra não perder
+
 export default Navbar;
