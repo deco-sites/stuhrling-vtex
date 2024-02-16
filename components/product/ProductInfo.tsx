@@ -17,6 +17,7 @@ import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductSelector from "./ProductVariantSelector.tsx";
+import { useEffect } from "preact/compat";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -116,11 +117,13 @@ function ProductInfo({ page, layout }: Props) {
                     productID={productID}
                     seller={seller}
                   />
-                  {/* <WishlistButtonVtex
+                  {
+                    /* <WishlistButtonVtex
                     variant="full"
                     productID={productID}
                     productGroupID={productGroupID}
-                  /> */}
+                  /> */
+                  }
                 </>
               )}
               {platform === "wake" && (
@@ -183,7 +186,8 @@ function ProductInfo({ page, layout }: Props) {
       </div>
       {/* Description card */}
       <div class="mt-4 sm:mt-6">
-        {/* <span class="text-sm">
+        {
+          /* <span class="text-sm">
           {description && (
             <details>
               <summary class="cursor-pointer">Descrição</summary>
@@ -193,7 +197,8 @@ function ProductInfo({ page, layout }: Props) {
               />
             </details>
           )}
-        </span> */}
+        </span> */
+        }
       </div>
       {/* Analytics Event */}
       <SendEventOnView

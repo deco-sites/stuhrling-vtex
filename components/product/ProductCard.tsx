@@ -165,7 +165,6 @@ function ProductCard({
               <WishlistButtonVtex
                 productGroupID={productGroupID}
                 productID={productID}
-                
               />
             )}
             {platform === "wake" && (

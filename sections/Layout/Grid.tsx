@@ -64,7 +64,7 @@ function Grid({ mobile, desktop, sectionChildrens, children }: Props) {
   return (
     <div
       class={clx(
-        "grid max-w-[1280px] m-auto mt-[8px]",	
+        "grid max-w-[1280px] m-auto mt-[8px]",
         mobile?.gap ? grid.gap.mobile[mobile.gap] : grid.gap.mobile[8],
         mobile?.cols && grid.cols.mobile[mobile.cols],
         mobile?.flow && grid.flow.mobile[mobile.flow],

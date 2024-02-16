@@ -7,6 +7,12 @@ import Icon from "$store/components/ui/Icon.tsx";
 import { SearchButton } from "$store/islands/Header/Buttons.tsx";
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import Searchbar from "$store/islands/Header/Searchbar.tsx";
+import { useUI } from "$store/sdk/useUI.ts";
+import Cart from "$store/components/minicart/Cart.tsx";
+import Drawer from "$store/components/ui/Drawer.tsx";
+import type { ComponentChildren } from "preact";
+import Button from "$store/components/ui/Button.tsx";
+import { Suspense } from "preact/compat";
 
 interface Props {
   searchbar?: SearchbarProps;
@@ -21,7 +27,38 @@ interface Props {
 export default function MainHeader(props: Props) {
   const { topText, headerImage, headerItems, searchbar } = props;
   const [menu, setMenu] = useState<boolean>(false);
-  
+  const { displayCart } = useUI();
+
+  const Aside = (
+    { title, onClose, children }: {
+      title: string;
+      onClose?: () => void;
+      children: ComponentChildren;
+    },
+  ) => (
+    <div class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw]">
+      <div class="flex justify-between items-center">
+        <h1 class="px-4 py-3">
+          <span class="font-medium text-2xl">{title}</span>
+        </h1>
+        {onClose && (
+          <Button class="btn btn-ghost" onClick={onClose}>
+            <Icon id="XMark" size={24} strokeWidth={2} />
+          </Button>
+        )}
+      </div>
+      <Suspense
+        fallback={
+          <div class="w-screen flex items-center justify-center">
+            <span class="loading loading-ring" />
+          </div>
+        }
+      >
+        {children}
+      </Suspense>
+    </div>
+  );
+
   return (
     <div>
       {/*Desktop*/}
@@ -60,6 +97,20 @@ export default function MainHeader(props: Props) {
               </div>
             </a>
             <CartButtonVTEX />
+            <Drawer // right drawer
+              class="drawer-end"
+              open={displayCart.value !== false}
+              onClose={() => displayCart.value = false}
+              aside={
+                <Aside
+                  title="Minha sacola"
+                  onClose={() => displayCart.value = false}
+                >
+                  <Cart platform={"vtex"} />
+                </Aside>
+              }
+            >
+            </Drawer>
           </div>
         </div>
       </div>

@@ -118,14 +118,23 @@ function ShippingSimulation({ items }: Props) {
             postalCode.value = e.currentTarget.value;
           }}
         />
-        <Button type="submit" loading={loading.value} class=" bg-black text-white">
+        <Button
+          type="submit"
+          loading={loading.value}
+          class=" bg-black text-white"
+        >
           Calcular
         </Button>
       </form>
 
       <div class="flex flex-col">
         <span class="text-[#FF6B00] underline">
-          <a href="https://buscacepinter.correios.com.br/app/endereco/index.php?t" target="_blank">Não sei meu CEP</a>
+          <a
+            href="https://buscacepinter.correios.com.br/app/endereco/index.php?t"
+            target="_blank"
+          >
+            Não sei meu CEP
+          </a>
         </span>
       </div>
 
