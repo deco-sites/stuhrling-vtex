@@ -94,9 +94,8 @@ function ShippingSimulation({ items }: Props) {
   return (
     <div class="flex flex-col gap-2">
       <div class="flex flex-col">
-        <span>Calcular frete</span>
         <span>
-          Informe seu CEP para consultar os prazos de entrega
+          CALCULE FRETE E PRAZO
         </span>
       </div>
 
@@ -111,7 +110,7 @@ function ShippingSimulation({ items }: Props) {
           as="input"
           type="text"
           class="input input-bordered join-item"
-          placeholder="Seu cep aqui"
+          placeholder=""
           value={postalCode.value}
           maxLength={8}
           size={8}
@@ -119,10 +118,16 @@ function ShippingSimulation({ items }: Props) {
             postalCode.value = e.currentTarget.value;
           }}
         />
-        <Button type="submit" loading={loading.value} class="join-item">
+        <Button type="submit" loading={loading.value} class=" bg-black text-white">
           Calcular
         </Button>
       </form>
+
+      <div class="flex flex-col">
+        <span class="text-[#FF6B00] underline">
+          <a href="https://buscacepinter.correios.com.br/app/endereco/index.php?t" target="_blank">Não sei meu CEP</a>
+        </span>
+      </div>
 
       <div>
         <div>

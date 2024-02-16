@@ -1,15 +1,15 @@
 interface Props {
   videoLink: string;
-  videoText: string;
-  buttonHref: string;
+  videoText?: string;
+  buttonHref?: string;
 }
 
 export default function VideoInfo({ videoLink, videoText, buttonHref }: Props) {
-  const getVideoId = (video) => {
+  const getVideoId = (video: string) => {
     console.log(`Vídeo puro`, video),
       console.log(
         `video tratado`,
-        video.replace("https://www.youtube.com/watch?v=", null),
+        video.replace("https://www.youtube.com/watch?v=", ""),
       );
     return video.replace("https://www.youtube.com/watch?v=", "");
   };
@@ -28,7 +28,7 @@ export default function VideoInfo({ videoLink, videoText, buttonHref }: Props) {
       >
       </iframe>
       <p
-        className={`lg:px-[150px] lg:py-[30px] text-[#777] font-['lato']  text-center`}
+        className={`lg:px-[150px] lg:py-[30px] text-[#000] font-['lato']  text-center`}
       >
         {videoText}
       </p>

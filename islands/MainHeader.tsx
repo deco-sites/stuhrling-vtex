@@ -21,16 +21,18 @@ interface Props {
 export default function MainHeader(props: Props) {
   const { topText, headerImage, headerItems, searchbar } = props;
   const [menu, setMenu] = useState<boolean>(false);
-
+  
   return (
     <div>
       {/*Desktop*/}
-      <div className={` hidden flex-col w-full xl:flex`}>
+      <div className={` hidden flex-col w-full xl:flex xl:shadow`}>
         <div className="bg-black text-center text-white font-bold text-[13px] py-1">
           {topText}
         </div>
         <div className={`flex justify-between items-center py-7 px-6`}>
-          <Image src={headerImage ? headerImage : ""}></Image>
+          <a href="/">
+            <Image width={229} src={headerImage ? headerImage : ""}></Image>
+          </a>
           <div className="max-w-[1440px] flex flex-row justify-between items-center gap-[30px]">
             {headerItems
               ? headerItems.map((item) => {
@@ -79,7 +81,7 @@ export default function MainHeader(props: Props) {
             <div className={`h-[2px] w-full bg-black`}></div>
             <div className={`h-[2px] w-full bg-black`}></div>
           </div>
-          <Image src={headerImage ? headerImage : ""}></Image>
+          <Image width={174} src={headerImage ? headerImage : ""}></Image>
           <div>
             <CartButtonVTEX />
           </div>

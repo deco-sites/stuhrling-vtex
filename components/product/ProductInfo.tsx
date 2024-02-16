@@ -70,7 +70,7 @@ function ProductInfo({ page, layout }: Props) {
   });
 
   return (
-    <div class="flex flex-col" id={id}>
+    <div class="flex flex-col max-w-[400px]" id={id}>
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
         <div>
@@ -94,7 +94,7 @@ function ProductInfo({ page, layout }: Props) {
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
           )}
-          <span class="font-medium text-xl text-secondary">
+          <span class="font-medium text-xl text-black">
             {formatPrice(price, offers?.priceCurrency)}
           </span>
         </div>
@@ -105,7 +105,7 @@ function ProductInfo({ page, layout }: Props) {
         <ProductSelector product={product} />
       </div>
       {/* Add to Cart and Favorites button */}
-      <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+      <div class="mt-4 sm:mt-4 flex flex-col gap-2">
         {availability === "https://schema.org/InStock"
           ? (
             <>
@@ -116,11 +116,11 @@ function ProductInfo({ page, layout }: Props) {
                     productID={productID}
                     seller={seller}
                   />
-                  <WishlistButtonVtex
+                  {/* <WishlistButtonVtex
                     variant="full"
                     productID={productID}
                     productGroupID={productGroupID}
-                  />
+                  /> */}
                 </>
               )}
               {platform === "wake" && (
@@ -183,7 +183,7 @@ function ProductInfo({ page, layout }: Props) {
       </div>
       {/* Description card */}
       <div class="mt-4 sm:mt-6">
-        <span class="text-sm">
+        {/* <span class="text-sm">
           {description && (
             <details>
               <summary class="cursor-pointer">Descrição</summary>
@@ -193,7 +193,7 @@ function ProductInfo({ page, layout }: Props) {
               />
             </details>
           )}
-        </span>
+        </span> */}
       </div>
       {/* Analytics Event */}
       <SendEventOnView
