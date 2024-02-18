@@ -138,7 +138,7 @@ export default function MainFooter(props: Props) {
               >
                 FORMAS DE PAGAMENTO
               </p>
-              <div className={`flex gap-[1px]`}>
+              <div className={`flex gap-[1px] flex-wrap`}>
                 {payments.map((item) => {
                   return <Image src={item?.image} />;
                 })}

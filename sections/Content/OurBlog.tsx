@@ -22,7 +22,7 @@ export default function OurBlog({ verTodosOsArtigosLink, cards }: Props) {
           {cards.map((item) => {
             return (
               <div className={`w-[100vw] xl:w-auto p-2`}>
-                <Image src={item.image} />
+                <Image src={item.image} width={420} height={300} />
                 <h3 className={`font-['lato'] text-base py-2 uppercase`}>
                   {item.cardTitle}
                 </h3>

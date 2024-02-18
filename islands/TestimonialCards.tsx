@@ -22,7 +22,7 @@ export default function TestimonialCards(props: Props) {
             <div
               className={`flex justify-center items-center flex-col italic w-screen xl:w-auto`}
             >
-              <Image width={150} height={`auto`} src={item.image} />
+              <Image width={150} height={62} src={item.image} />
               <p className={`text-center font-['lato'] italic`}>{item.text}</p>
             </div>
           );

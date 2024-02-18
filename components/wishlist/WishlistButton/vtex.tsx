@@ -25,7 +25,7 @@ function WishlistButton({
 
   return (
     <Button
-    className={`text-[#ff6b00]`}
+      className={`text-[#ff6b00]`}
       loading={loading.value}
       inWishlist={inWishlist}
       isUserLoggedIn={isUserLoggedIn}

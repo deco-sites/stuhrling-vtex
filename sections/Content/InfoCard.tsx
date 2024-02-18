@@ -1,4 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
+import Image from "apps/website/components/Image.tsx";
+
 
 interface Props {
   title: string;
@@ -15,7 +17,7 @@ export default function InfoCard(
     <div
       className={`max-w-[1280px] m-auto flex gap-[30px] h-fit my-5 flex-col xl:flex-row p-3 xl:p-0`}
     >
-      <img className={`h-auto xl:h-[600px]`} src={image} alt="" />
+      <Image width={650} height={650} className={`h-auto xl:h-[600px]`} src={image} alt="" />
       <div
         className={`flex flex-col h-auto xl:h-[600px] justify-around bg-[#F2F2F2] lg:px-[112px] lg:py-[50px] py-7 px-7 gap-4 lg:gap-0`}
       >

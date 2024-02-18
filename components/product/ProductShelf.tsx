@@ -51,13 +51,13 @@ function ProductShelf({
 
   const slideMobile = {
     1: "w-full",
-    2: "w-1/2",
+    2: "w-4/5",
     3: "w-1/3",
     4: "w-1/4",
     5: "w-1/5",
   };
   return (
-    <div class="w-full max-w-[1416px] m-auto container py-8 flex flex-col gap-6 lg:py-10">
+    <div class="w-full max-w-[1416px] m-auto container py-8 flex flex-col gap-6 lg:py-10 relative">
       <Header
         title={title || ""}
         description={description || ""}
@@ -68,10 +68,10 @@ function ProductShelf({
       <div
         id={id}
         class={`grid ${
-          layout?.showArrows ? "grid-cols-[48px_1fr_48px]" : ""
+          /*layout?.showArrows ? "grid-cols-[48px_1fr_48px]" : */""
         } px-0 md:px-5 container`}
       >
-        <Slider class="carousel carousel-center sm:carousel-end sm:gap-1 row-start-2 row-end-5">
+        <Slider class="carousel carousel-center sm:carousel-end sm:gap-1 row-start-2 row-end-5 gap-3 xl:gap-6">
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
@@ -82,7 +82,7 @@ function ProductShelf({
               <ProductCard
                 product={product}
                 itemListName={title}
-                layout={cardLayout}
+                layout={cardLayout} 
                 platform={platform}
                 index={index}
               />
@@ -90,20 +90,19 @@ function ProductShelf({
           ))}
         </Slider>
 
-        {layout?.showArrows && (
-          <>
-            <div class="relative block z-10 col-start-1 row-start-3">
-              <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center">
+        <>
+            <div class="top-1/2 left-[-24px] hidden xl:block absolute z-10 col-start-1 row-start-3">
+              <Slider.PrevButton class="w-12 h-12 flex justify-center items-center">
                 <Icon size={24} id="ChevronLeft" strokeWidth={3} class="w-5" />
               </Slider.PrevButton>
             </div>
-            <div class="relative block z-10 col-start-3 row-start-3">
-              <Slider.NextButton class="absolute w-12 h-12 flex justify-center items-center">
+            <div class="absolute top-1/2 right-[-24px] hidden xl:block z-10 col-start-3 row-start-3">
+              <Slider.NextButton class="w-12 h-12 flex justify-center items-center">
                 <Icon size={24} id="ChevronRight" strokeWidth={3} />
               </Slider.NextButton>
             </div>
-          </>
-        )}
+        </>
+
         <SliderJS rootId={id} />
         <SendEventOnView
           id={id}

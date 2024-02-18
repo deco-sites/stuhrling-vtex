@@ -1,4 +1,5 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
+import Image from "apps/website/components/Image.tsx";
 
 interface Props {
   images: ImageWidget[];
@@ -11,7 +12,7 @@ export default function HomeBanners({ images }: Props) {
     >
       {images
         ? images.map((item) => {
-          return <img src={item} alt="" />;
+          return <Image src={item} alt="" width={650} height={650} />;
         })
         : null}
     </div>
