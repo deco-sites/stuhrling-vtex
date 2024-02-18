@@ -67,9 +67,7 @@ function ProductShelf({
 
       <div
         id={id}
-        class={`grid ${
-          /*layout?.showArrows ? "grid-cols-[48px_1fr_48px]" : */""
-        } px-0 md:px-5 container`}
+        class={`grid ${/*layout?.showArrows ? "grid-cols-[48px_1fr_48px]" : */ ""} px-0 md:px-5 container`}
       >
         <Slider class="carousel carousel-center sm:carousel-end sm:gap-1 row-start-2 row-end-5 gap-3 xl:gap-6">
           {products?.map((product, index) => (
@@ -82,7 +80,7 @@ function ProductShelf({
               <ProductCard
                 product={product}
                 itemListName={title}
-                layout={cardLayout} 
+                layout={cardLayout}
                 platform={platform}
                 index={index}
               />
@@ -91,16 +89,16 @@ function ProductShelf({
         </Slider>
 
         <>
-            <div class="top-1/2 left-[-24px] hidden xl:block absolute z-10 col-start-1 row-start-3">
-              <Slider.PrevButton class="w-12 h-12 flex justify-center items-center">
-                <Icon size={24} id="ChevronLeft" strokeWidth={3} class="w-5" />
-              </Slider.PrevButton>
-            </div>
-            <div class="absolute top-1/2 right-[-24px] hidden xl:block z-10 col-start-3 row-start-3">
-              <Slider.NextButton class="w-12 h-12 flex justify-center items-center">
-                <Icon size={24} id="ChevronRight" strokeWidth={3} />
-              </Slider.NextButton>
-            </div>
+          <div class="top-1/2 left-[-24px] hidden xl:block absolute z-10 col-start-1 row-start-3">
+            <Slider.PrevButton class="w-12 h-12 flex justify-center items-center">
+              <Icon size={24} id="ChevronLeft" strokeWidth={3} class="w-5" />
+            </Slider.PrevButton>
+          </div>
+          <div class="absolute top-1/2 right-[-24px] hidden xl:block z-10 col-start-3 row-start-3">
+            <Slider.NextButton class="w-12 h-12 flex justify-center items-center">
+              <Icon size={24} id="ChevronRight" strokeWidth={3} />
+            </Slider.NextButton>
+          </div>
         </>
 
         <SliderJS rootId={id} />

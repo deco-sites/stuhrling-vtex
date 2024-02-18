@@ -38,7 +38,12 @@ export default function OurCollections(props: Props) {
             {collectionItems.map((item) => {
               return (
                 <a className="min-w-96" href={collectionItems?.link}>
-                  <Image src={item?.image} className="w-96" width={384} heigth={380} />
+                  <Image
+                    src={item?.image}
+                    className="w-96"
+                    width={384}
+                    heigth={380}
+                  />
                   <p
                     className={`font-['lato'] text-center text-ellipsis uppercase`}
                   >
