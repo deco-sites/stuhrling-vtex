@@ -354,7 +354,6 @@ function ProductCard({
                 l?.onMouseOver?.showCta ? "lg:hidden" : ""
               }`}
             >
-              {cta}
             </div>
           )
           : (

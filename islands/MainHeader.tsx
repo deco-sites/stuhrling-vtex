@@ -5,8 +5,17 @@ import Image from "apps/website/components/Image.tsx";
 import CartButtonVTEX from "$store/islands/Header/Cart/vtex.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { SearchButton } from "$store/islands/Header/Buttons.tsx";
+import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
+import Searchbar from "$store/islands/Header/Searchbar.tsx";
+import { useUI } from "$store/sdk/useUI.ts";
+import Cart from "$store/components/minicart/Cart.tsx";
+import Drawer from "$store/components/ui/Drawer.tsx";
+import type { ComponentChildren } from "preact";
+import Button from "$store/components/ui/Button.tsx";
+import { Suspense } from "preact/compat";
 
 interface Props {
+  searchbar?: SearchbarProps;
   topText?: string;
   headerImage?: ImageWidget;
   headerItems?: {
@@ -16,18 +25,51 @@ interface Props {
 }
 
 export default function MainHeader(props: Props) {
-  const { topText, headerImage, headerItems } = props;
+  const { topText, headerImage, headerItems, searchbar } = props;
   const [menu, setMenu] = useState<boolean>(false);
+  const { displayCart } = useUI();
+
+  const Aside = (
+    { title, onClose, children }: {
+      title: string;
+      onClose?: () => void;
+      children: ComponentChildren;
+    },
+  ) => (
+    <div class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw]">
+      <div class="flex justify-between items-center">
+        <h1 class="px-4 py-3">
+          <span class="font-medium text-2xl">{title}</span>
+        </h1>
+        {onClose && (
+          <Button class="btn btn-ghost" onClick={onClose}>
+            <Icon id="XMark" size={24} strokeWidth={2} />
+          </Button>
+        )}
+      </div>
+      <Suspense
+        fallback={
+          <div class="w-screen flex items-center justify-center">
+            <span class="loading loading-ring" />
+          </div>
+        }
+      >
+        {children}
+      </Suspense>
+    </div>
+  );
 
   return (
     <div>
       {/*Desktop*/}
-      <div className={` hidden flex-col w-full xl:flex`}>
+      <div className={` hidden flex-col w-full xl:flex xl:shadow`}>
         <div className="bg-black text-center text-white font-bold text-[13px] py-1">
           {topText}
         </div>
         <div className={`flex justify-between items-center py-7 px-6`}>
-          <Image src={headerImage ? headerImage : ""}></Image>
+          <a href="/">
+            <Image width={229} src={headerImage ? headerImage : ""}></Image>
+          </a>
           <div className="max-w-[1440px] flex flex-row justify-between items-center gap-[30px]">
             {headerItems
               ? headerItems.map((item) => {
@@ -42,8 +84,9 @@ export default function MainHeader(props: Props) {
               })
               : null}
           </div>
-          <div className={`flex`}>
+          <div className={`flex gap-[20px]`}>
             <SearchButton />
+            <Searchbar searchbar={searchbar} />
             <a
               class="flex items-center text-xs font-thin"
               href="/account"
@@ -54,6 +97,20 @@ export default function MainHeader(props: Props) {
               </div>
             </a>
             <CartButtonVTEX />
+            <Drawer // right drawer
+              class="drawer-end"
+              open={displayCart.value !== false}
+              onClose={() => displayCart.value = false}
+              aside={
+                <Aside
+                  title="Minha sacola"
+                  onClose={() => displayCart.value = false}
+                >
+                  <Cart platform={"vtex"} />
+                </Aside>
+              }
+            >
+            </Drawer>
           </div>
         </div>
       </div>
@@ -75,7 +132,7 @@ export default function MainHeader(props: Props) {
             <div className={`h-[2px] w-full bg-black`}></div>
             <div className={`h-[2px] w-full bg-black`}></div>
           </div>
-          <Image src={headerImage ? headerImage : ""}></Image>
+          <Image width={174} src={headerImage ? headerImage : ""}></Image>
           <div>
             <CartButtonVTEX />
           </div>

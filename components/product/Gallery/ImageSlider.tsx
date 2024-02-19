@@ -36,9 +36,12 @@ export default function GallerySlider(props: Props) {
   const aspectRatio = `${width} / ${height}`;
 
   return (
-    <div id={id} class="grid grid-flow-row sm:grid-flow-col">
+    <div
+      id={id}
+      class="grid grid-flow-row sm:grid-flow-col lg:max-w-[1280px] lg:m-auto"
+    >
       {/* Image Slider */}
-      <div class="relative order-1 sm:order-2 lg:grid lg:grid-cols-2 flex overflow-auto">
+      <div class="relative order-1 sm:order-2 lg:grid lg:grid-cols-2 lg:gap-[10px] flex overflow-auto">
         {images.map((img, index) => (
           <div class="carousel-item w-full">
             <Image

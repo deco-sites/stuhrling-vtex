@@ -27,7 +27,7 @@ export default function InfoCard(
         className={`flex flex-col h-auto xl:h-[600px] justify-around bg-[#F2F2F2] lg:px-[112px] lg:py-[50px] py-7 px-7 gap-4 lg:gap-0`}
       >
         <h1
-          className={`uppercase font-['lato'] text-xl xl:text-3xl font-light tracking-[4px] leading-6 `}
+          className={`uppercase font-['lato'] text-xl xl:text-3xl font-[300] tracking-[4px] leading-6 `}
         >
           {title}
         </h1>
