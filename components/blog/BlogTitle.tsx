@@ -1,12 +1,13 @@
 interface Props {
-    title: string;
+  title: string;
 }
 
 export default function BlogTitle(
-    { title }: Props) {
+  { title }: Props,
+) {
   return (
     <div class="max-w-[1280px] m-auto flex items-center justify-center">
-        <h1 class="font-['lato'] text-[24px]">{title}</h1>
+      <h1 class="font-['lato'] text-[24px]">{title}</h1>
     </div>
   );
 }
