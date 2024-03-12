@@ -105,7 +105,7 @@ export default function MainHeader(props: Props) {
                     <a className="font-bold text-[14px] font-['lato'] uppercase" href={item?.link}>
                       {item?.title}
                     </a>
-                    {/*item?.menuDropType == "complexDrop"*/ item?.complexDrop.firstRow?.length || item?.complexDrop.secondRow?.lenght ?
+                    {/*item?.menuDropType == "complexDrop"*/ item?.complexDrop?.firstRow?.length || item?.complexDrop.secondRow?.lenght ?
                       <div className={`z-999 w-full hidden h-fit group-hover:flex absolute top-[115px] left-0 bg-white border-b border-b-gray-300`}>
                         <div className={`w-[1026px] my-8 mx-auto`}>
                           <div className={`flex flex-row justify-between`}>{
@@ -217,7 +217,7 @@ export default function MainHeader(props: Props) {
                   <div onClick={()=>{updateMobileDrop(index)}} className={`border-t border-gray-200 ${index + 1 == mobileDropDown?.lenght ? "border-b" : "" } py-4 pr-4 flex flex-row w-full justify-between items-center`}><p className={`font-bold text-[14px] font-['lato'] uppercase`}>{item.title}</p> {item?.complexDrop?.firstRow?.length ? <Image className={`h-[15px]  ${!mobileDropDown.includes(index) ? `-rotate-90` : null}`} height={15} src={dropArrow} /> : null}</div>
                   <div className={`${mobileDropDown.includes(index) ? `h-fit max-h-fit` : ` max-h-0 overflow-hidden`}  transition-max-height duration-500`}>
                     {item?.complexDrop?.firstRow?.length ? 
-                      item.complexDrop.firstRow?.map((item, index)=>{
+                      item.complexDrop?.firstRow?.map((item, index)=>{
                         return(
                           <a href={item?.href}className={`border-t border-gray-200 py-4 pr-4 flex flex-row w-full justify-between items-center`}>
                             {item.text}
