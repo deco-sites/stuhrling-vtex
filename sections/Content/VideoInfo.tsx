@@ -6,11 +6,6 @@ interface Props {
 
 export default function VideoInfo({ videoLink, videoText, buttonHref }: Props) {
   const getVideoId = (video: string) => {
-    console.log(`Vídeo puro`, video),
-      console.log(
-        `video tratado`,
-        video.replace("https://www.youtube.com/watch?v=", ""),
-      );
     return video.replace("https://www.youtube.com/watch?v=", "");
   };
 

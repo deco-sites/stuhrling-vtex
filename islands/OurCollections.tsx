@@ -19,7 +19,6 @@ export default function OurCollections(props: Props) {
 
   const weelHandler = (event) => {
     event.preventDefault();
-    console.log(event, mainContainer);
     mainContainer.current.scrollLeft = mainContainer.current.scrollLeft +
       (event.deltaY * 2);
   };

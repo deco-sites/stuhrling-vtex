@@ -173,7 +173,6 @@ export default function MainFooter(props: Props) {
       <div className={`hidden xl:block p-14 max-w-[1400px] m-auto`}>
         <div className={`flex justify-between`}>
           {categories.map((item) => {
-            console.log(item);
             return (
               <div className={`flex flex-col gap-4`}>
                 <p className={`font-['lato'] font-bold text-sm uppercase mb-4`}>
