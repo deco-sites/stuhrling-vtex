@@ -5,6 +5,12 @@
 @layer base {
 
   /* Allow changing font family via CMS */
+  .custom-text ul{
+    list-style: revert;
+    margin: revert;
+    padding: revert;
+  }
+
   html {
     font-family: var(--font-family);
   }
