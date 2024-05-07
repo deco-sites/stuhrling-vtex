@@ -45,27 +45,28 @@ import * as $$$$$$37 from "./sections/Content/CustomTitle.tsx";
 import * as $$$$$$38 from "./sections/Content/VideoPDP.tsx";
 import * as $$$$$$39 from "./sections/Content/HomeBanners.tsx";
 import * as $$$$$$40 from "./sections/Content/Benefits.tsx";
-import * as $$$$$$41 from "./sections/Content/CustomText.tsx";
-import * as $$$$$$42 from "./sections/Content/Testimonials.tsx";
-import * as $$$$$$43 from "./sections/Content/Hero.tsx";
-import * as $$$$$$44 from "./sections/Content/Features.tsx";
-import * as $$$$$$45 from "./sections/Content/BlogPosts.tsx";
-import * as $$$$$$46 from "./sections/Content/CallToAction.tsx";
-import * as $$$$$$47 from "./sections/Content/RichText.tsx";
-import * as $$$$$$48 from "./sections/Content/VideoInfo.tsx";
-import * as $$$$$$49 from "./sections/Content/Faq.tsx";
-import * as $$$$$$50 from "./sections/Content/OurCollections.tsx";
-import * as $$$$$$51 from "./sections/Content/TestimonialCards.tsx";
-import * as $$$$$$52 from "./sections/Content/BlogPageCards.tsx";
-import * as $$$$$$53 from "./sections/Content/Logos.tsx";
-import * as $$$$$$54 from "./sections/Content/OurBlog.tsx";
-import * as $$$$$$55 from "./sections/Content/InfoCard.tsx";
-import * as $$$$$$56 from "./sections/Content/SpacingBar.tsx";
-import * as $$$$$$57 from "./sections/Animation/Animation.tsx";
-import * as $$$$$$58 from "./sections/Images/ShoppableBanner.tsx";
-import * as $$$$$$59 from "./sections/Images/ImageGallery.tsx";
-import * as $$$$$$60 from "./sections/Images/BannerGrid.tsx";
-import * as $$$$$$61 from "./sections/Images/Carousel.tsx";
+import * as $$$$$$41 from "./sections/Content/ContactForm.tsx";
+import * as $$$$$$42 from "./sections/Content/CustomText.tsx";
+import * as $$$$$$43 from "./sections/Content/Testimonials.tsx";
+import * as $$$$$$44 from "./sections/Content/Hero.tsx";
+import * as $$$$$$45 from "./sections/Content/Features.tsx";
+import * as $$$$$$46 from "./sections/Content/BlogPosts.tsx";
+import * as $$$$$$47 from "./sections/Content/CallToAction.tsx";
+import * as $$$$$$48 from "./sections/Content/RichText.tsx";
+import * as $$$$$$49 from "./sections/Content/VideoInfo.tsx";
+import * as $$$$$$50 from "./sections/Content/Faq.tsx";
+import * as $$$$$$51 from "./sections/Content/OurCollections.tsx";
+import * as $$$$$$52 from "./sections/Content/TestimonialCards.tsx";
+import * as $$$$$$53 from "./sections/Content/BlogPageCards.tsx";
+import * as $$$$$$54 from "./sections/Content/Logos.tsx";
+import * as $$$$$$55 from "./sections/Content/OurBlog.tsx";
+import * as $$$$$$56 from "./sections/Content/InfoCard.tsx";
+import * as $$$$$$57 from "./sections/Content/SpacingBar.tsx";
+import * as $$$$$$58 from "./sections/Animation/Animation.tsx";
+import * as $$$$$$59 from "./sections/Images/ShoppableBanner.tsx";
+import * as $$$$$$60 from "./sections/Images/ImageGallery.tsx";
+import * as $$$$$$61 from "./sections/Images/BannerGrid.tsx";
+import * as $$$$$$62 from "./sections/Images/Carousel.tsx";
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
 
@@ -75,7 +76,7 @@ const manifest = {
     "deco-sites/stuhrling-vtex/loaders/List/Sections.tsx": $$$0,
   },
   "sections": {
-    "deco-sites/stuhrling-vtex/sections/Animation/Animation.tsx": $$$$$$57,
+    "deco-sites/stuhrling-vtex/sections/Animation/Animation.tsx": $$$$$$58,
     "deco-sites/stuhrling-vtex/sections/blog/BlogContent.tsx": $$$$$$9,
     "deco-sites/stuhrling-vtex/sections/blog/BlogImage.tsx": $$$$$$10,
     "deco-sites/stuhrling-vtex/sections/blog/BlogTitle.tsx": $$$$$$8,
@@ -84,36 +85,37 @@ const manifest = {
     "deco-sites/stuhrling-vtex/sections/Category/CategoryList.tsx": $$$$$$12,
     "deco-sites/stuhrling-vtex/sections/Content/BannerSlider.tsx": $$$$$$34,
     "deco-sites/stuhrling-vtex/sections/Content/Benefits.tsx": $$$$$$40,
-    "deco-sites/stuhrling-vtex/sections/Content/BlogPageCards.tsx": $$$$$$52,
-    "deco-sites/stuhrling-vtex/sections/Content/BlogPosts.tsx": $$$$$$45,
-    "deco-sites/stuhrling-vtex/sections/Content/CallToAction.tsx": $$$$$$46,
-    "deco-sites/stuhrling-vtex/sections/Content/CustomText.tsx": $$$$$$41,
+    "deco-sites/stuhrling-vtex/sections/Content/BlogPageCards.tsx": $$$$$$53,
+    "deco-sites/stuhrling-vtex/sections/Content/BlogPosts.tsx": $$$$$$46,
+    "deco-sites/stuhrling-vtex/sections/Content/CallToAction.tsx": $$$$$$47,
+    "deco-sites/stuhrling-vtex/sections/Content/ContactForm.tsx": $$$$$$41,
+    "deco-sites/stuhrling-vtex/sections/Content/CustomText.tsx": $$$$$$42,
     "deco-sites/stuhrling-vtex/sections/Content/CustomTitle.tsx": $$$$$$37,
-    "deco-sites/stuhrling-vtex/sections/Content/Faq.tsx": $$$$$$49,
-    "deco-sites/stuhrling-vtex/sections/Content/Features.tsx": $$$$$$44,
-    "deco-sites/stuhrling-vtex/sections/Content/Hero.tsx": $$$$$$43,
+    "deco-sites/stuhrling-vtex/sections/Content/Faq.tsx": $$$$$$50,
+    "deco-sites/stuhrling-vtex/sections/Content/Features.tsx": $$$$$$45,
+    "deco-sites/stuhrling-vtex/sections/Content/Hero.tsx": $$$$$$44,
     "deco-sites/stuhrling-vtex/sections/Content/HomeBanners.tsx": $$$$$$39,
     "deco-sites/stuhrling-vtex/sections/Content/ImageSection.tsx": $$$$$$36,
-    "deco-sites/stuhrling-vtex/sections/Content/InfoCard.tsx": $$$$$$55,
-    "deco-sites/stuhrling-vtex/sections/Content/Logos.tsx": $$$$$$53,
-    "deco-sites/stuhrling-vtex/sections/Content/OurBlog.tsx": $$$$$$54,
-    "deco-sites/stuhrling-vtex/sections/Content/OurCollections.tsx": $$$$$$50,
-    "deco-sites/stuhrling-vtex/sections/Content/RichText.tsx": $$$$$$47,
-    "deco-sites/stuhrling-vtex/sections/Content/SpacingBar.tsx": $$$$$$56,
+    "deco-sites/stuhrling-vtex/sections/Content/InfoCard.tsx": $$$$$$56,
+    "deco-sites/stuhrling-vtex/sections/Content/Logos.tsx": $$$$$$54,
+    "deco-sites/stuhrling-vtex/sections/Content/OurBlog.tsx": $$$$$$55,
+    "deco-sites/stuhrling-vtex/sections/Content/OurCollections.tsx": $$$$$$51,
+    "deco-sites/stuhrling-vtex/sections/Content/RichText.tsx": $$$$$$48,
+    "deco-sites/stuhrling-vtex/sections/Content/SpacingBar.tsx": $$$$$$57,
     "deco-sites/stuhrling-vtex/sections/Content/Table.tsx": $$$$$$35,
-    "deco-sites/stuhrling-vtex/sections/Content/TestimonialCards.tsx": $$$$$$51,
-    "deco-sites/stuhrling-vtex/sections/Content/Testimonials.tsx": $$$$$$42,
-    "deco-sites/stuhrling-vtex/sections/Content/VideoInfo.tsx": $$$$$$48,
+    "deco-sites/stuhrling-vtex/sections/Content/TestimonialCards.tsx": $$$$$$52,
+    "deco-sites/stuhrling-vtex/sections/Content/Testimonials.tsx": $$$$$$43,
+    "deco-sites/stuhrling-vtex/sections/Content/VideoInfo.tsx": $$$$$$49,
     "deco-sites/stuhrling-vtex/sections/Content/VideoPDP.tsx": $$$$$$38,
     "deco-sites/stuhrling-vtex/sections/Footer/Footer.tsx": $$$$$$0,
     "deco-sites/stuhrling-vtex/sections/Footer/MainFooter.tsx": $$$$$$1,
     "deco-sites/stuhrling-vtex/sections/Gallery.tsx": $$$$$$6,
     "deco-sites/stuhrling-vtex/sections/Header/Header.tsx": $$$$$$32,
     "deco-sites/stuhrling-vtex/sections/Header/MainHeader.tsx": $$$$$$33,
-    "deco-sites/stuhrling-vtex/sections/Images/BannerGrid.tsx": $$$$$$60,
-    "deco-sites/stuhrling-vtex/sections/Images/Carousel.tsx": $$$$$$61,
-    "deco-sites/stuhrling-vtex/sections/Images/ImageGallery.tsx": $$$$$$59,
-    "deco-sites/stuhrling-vtex/sections/Images/ShoppableBanner.tsx": $$$$$$58,
+    "deco-sites/stuhrling-vtex/sections/Images/BannerGrid.tsx": $$$$$$61,
+    "deco-sites/stuhrling-vtex/sections/Images/Carousel.tsx": $$$$$$62,
+    "deco-sites/stuhrling-vtex/sections/Images/ImageGallery.tsx": $$$$$$60,
+    "deco-sites/stuhrling-vtex/sections/Images/ShoppableBanner.tsx": $$$$$$59,
     "deco-sites/stuhrling-vtex/sections/Layout/Container.tsx": $$$$$$4,
     "deco-sites/stuhrling-vtex/sections/Layout/Flex.tsx": $$$$$$3,
     "deco-sites/stuhrling-vtex/sections/Layout/Grid.tsx": $$$$$$5,

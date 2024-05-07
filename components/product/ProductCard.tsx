@@ -161,7 +161,7 @@ function ProductCard({
               l?.onMouseOver?.showFavoriteIcon ? "lg:group-hover:block" : ""
             }`}
           >
-            {platform === "vtex" && (
+            {/*platform === "vtex" && (
               <WishlistButtonVtex
                 productGroupID={productGroupID}
                 productID={productID}
@@ -172,10 +172,10 @@ function ProductCard({
                 productGroupID={productGroupID}
                 productID={productID}
               />
-            )}
+            )*/}
           </div>
           {/* Discount % */}
-          {!l?.hide?.discount && (
+          {/*!l?.hide?.discount && (
             <div class="text-sm bg-base-100 p-[10px]">
               <span class="text-base-content font-bold">
                 {listPrice && price
@@ -184,7 +184,7 @@ function ProductCard({
               </span>
               OFF
             </div>
-          )}
+          )*/}
         </div>
 
         {/* Product Images */}
