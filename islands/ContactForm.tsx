@@ -7,12 +7,36 @@ interface Props {
 
 const submitHandler = function (event) {
   event.preventDefault();
+  const email = event.target[0].value
+  const name = event.target[1].value
+  const message = event.target[2].value
+
+  console.log(`Message sent`, {email: email, name:name, message: message})
+
+  /*axiod.post(`https://node-serve-vtex.herokuapp.com/stuhrling/sendmessage`, {body: {email: email, name:name, message: message}}).then((res)=>{
+    console.log(`res: `, res).catch((error) => {
+      console.log(error);
+    });
+  })*/
+
+  axiod({
+    method: "POST",
+    url: `https://node-serve-vtex.herokuapp.com/stuhrling/sendmessage`,
+    data: {email: email, name:name, message: message}
+  }).then(response=>{
+    console.log(`Response`, response)
+    alert("Sua mensagem foi registrada!")
+  })
 };
 export default function ContactForm() {
   const [devAmbient, setDev] = useState(false)
+  const [messages, setMessages] = useState([])
 
   useEffect(()=>{
-    if(window.location.href && (window.location.href.includes("tuhrling-vtex.deco.site") || window.location.href.includes("localhost"))  ) setDev(true)
+    if(window.location.href && (window.location.href.includes("tuhrling-vtex.deco.site") || window.location.href.includes("localhost"))  ){ setDev(true) } else return
+    axiod.get(`https://node-serve-vtex.herokuapp.com/stuhrling/getmessages`).then(res=>{
+      res.data?.messages ? setMessages(res.data?.messages.reverse()) : null
+    })
   }, [])
 
   return (
@@ -72,9 +96,20 @@ export default function ContactForm() {
         </button>
       </form>
 
-      {devAmbient ? 
-        <div>
-          Estou na dev main
+      {devAmbient && messages ? 
+        <div className={`max-w-[1280px] m-auto`}>
+          <h1 className={`w-full text-center bold text-4xl`}>Mensagens</h1>
+          {
+            messages.map(item => {
+              return(
+                <div className={`border-b-2 border-gray-600 shadow-lg my-2`}>
+                  <div className={`flex gap-2`}><p>Nome:</p> <p>{item.name}</p></div>
+                  <div className={`flex gap-2`}><p>Email:</p> <a className={`text-blue-600`} href={`mailto: ${item.email}`}>{item.email}</a></div>
+                  <div className={`flex gap-2`}><p>Mensagem:</p><p>{item.message}</p></div> 
+                </div>
+              )
+            })
+          }
         </div>
       : null}
     </div>
