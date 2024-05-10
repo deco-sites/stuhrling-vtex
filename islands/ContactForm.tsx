@@ -1,6 +1,5 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import { useRef } from "preact/hooks";
-import { useUser } from "apps/vtex/hooks/useUser.ts";
+import { useRef, useState, useEffect } from "preact/hooks";
 import axiod from "https://deno.land/x/axiod/mod.ts";
 
 interface Props {
@@ -10,8 +9,12 @@ const submitHandler = function (event) {
   event.preventDefault();
 };
 export default function ContactForm() {
-  const { user } = useUser();
-  console.log("Usuário: ", user);
+  const [devAmbient, setDev] = useState(false)
+
+  useEffect(()=>{
+    if(window.location.href && (window.location.href.includes("tuhrling-vtex.deco.site") || window.location.href.includes("localhost"))  ) setDev(true)
+  }, [])
+
   return (
     <div className={`mb-14 mt-[120px] xl:mt-0`}>
       <div
@@ -67,8 +70,13 @@ export default function ContactForm() {
         >
           Enviar
         </button>
-        {window.location.href}
       </form>
+
+      {devAmbient ? 
+        <div>
+          Estou na dev main
+        </div>
+      : null}
     </div>
   );
 }
